@@ -1,0 +1,255 @@
+.App {
+    .App-header {
+        display: flex;
+        justify-content: space-between;
+
+        #toggle-lang {
+            position: absolute;
+            left: 1.6rem;
+            top: 3.2rem;
+
+            *{
+                font-size: 2.4rem
+            }
+            
+            .lang-btn {
+                background-color: transparent;
+                border: none;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        #navbar {
+            margin: 3.2rem auto 12.4rem;
+            
+            .nav-link {
+                font-size: 3.2rem;
+                border: 2px solid;
+                text-decoration: none;
+                border-radius: 2.5rem;
+                padding: 0.1rem 1.2rem 0.6rem;
+            }
+        }
+    }
+
+    main {
+        section {
+            margin: auto;
+
+        }
+
+        #home {
+            padding-bottom: 17.5rem;
+            text-align: right;
+
+            #hello {
+                text-align: center;
+                font-size: 11rem;
+                font-weight: 400;
+            }
+
+            #description {
+                font-size: 3.2rem;
+                margin-top: 4rem;
+                margin-right: 15.5rem;
+
+                #email {
+                    font-weight: bold;
+                    text-decoration: none;
+                    
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+        .section-title {
+            font-size: 4.8rem;
+            text-align: center;
+            text-transform: lowercase;
+            margin-bottom: 4rem;
+        }
+
+        #technologies {
+            width: 60%;
+            margin-bottom: 10rem;
+
+            &-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-gap: 6rem;
+    
+                .technologies-list {
+                    font-size: 2.2rem;
+    
+                    .list {
+                        &-title {
+                            text-align: center;
+                            text-transform: lowercase;
+                        }
+    
+                        &-items {
+                            margin-top: 1rem;
+                            opacity: 0.7;
+    
+                            .technology {
+                                margin-top: 0.4rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        #projects {
+            width: 94%;
+            margin-bottom: 6rem;
+
+            &-gallery {
+                display: grid;
+                grid-template-columns: repeat(6, 1fr);
+                grid-gap: 1.6rem;
+
+                .project-link {
+                    .project {
+                        position: relative;
+                        border-radius: 2.4rem;
+                        height: 50rem;
+    
+                        * {
+                            color: white;
+                        }
+    
+                        &-name {
+                            position: absolute;
+                            top: 4rem;
+                            left: 4rem;
+                            font-size: 3.2rem;
+    
+                            &-arrow {
+                                width: 1.8rem;
+                                height: 1.8rem;
+                                margin-left: 2rem;
+                            }
+                        }
+    
+                        &-image {
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 2.4rem;
+                            object-fit: cover;
+                        }
+                    }
+
+                    &:hover .project-name {
+                        text-decoration: underline;
+                    }
+                }
+
+                #photo-gallery-link {
+                    grid-column: 1 / span 3;
+                    grid-row: 1;
+
+                    #photo-gallery {
+                        background-color: #222222;
+
+                        .project-image {
+                            position: absolute;
+                            bottom: 0;
+                            right: 0;
+                            padding-top: 9.2rem;
+                            padding-left: 2.7rem;
+                            z-index: 2;
+                        }
+
+                        &-text {
+                            position: absolute;
+                            top: 12rem;
+                            left: 4rem;
+                            font-size: 9.6rem;
+                            z-index: 1;
+
+                            .uppercase {
+                                text-transform: uppercase;
+                            }
+
+                            #editorial {
+                                font-family: 'Editorial', sans-serif;
+                                font-size: 10.9rem;
+                                text-transform: none;
+                            }
+                        }
+                    }
+                }
+
+                #calculator-link {
+                    grid-column: 1 / span 2;
+                    grid-row: 2;
+
+                    #calculator {
+                        .project-name {
+                            color: black;
+                        }
+                    }
+                }
+
+                #random-quote-machine-link {
+                    grid-column: 4 / span 3;
+                    grid-row: 1;
+                }
+            }
+
+            #github-link {
+                text-decoration: none;
+                
+                &-text {
+                    font-size: 3.2rem;
+                    margin-top: 2rem;
+                    text-align: center;
+
+                    #github-icon {
+                        margin-left: 0.6rem;
+                    }
+    
+                    #greater-than-icon {
+                        margin-left: 2.4rem;
+                    }
+                }  
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        #contact {
+            padding: 6rem 20% 8rem;
+            border-top: 1px solid black;
+
+            #social-links {
+                display: flex;
+                justify-content: space-evenly;
+
+                .social-link {
+                    text-decoration: none;
+
+                    &-text {
+                        font-size: 2.8rem;
+
+                        .social-icon {
+                            margin-right: 0.6rem;
+                        }
+                    }
+                }
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

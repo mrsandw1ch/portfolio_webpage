@@ -1,0 +1,45 @@
+@font-face {
+	font-family: 'Editorial'; 
+	src: url(../public/fonts/PPEditorialNew-UltralightItalic.otf); 
+}
+
+@font-face {
+	font-family: 'Helvetica'; 
+	src: url(../public/fonts/helvetica_regular.otf); 
+}
+
+@font-face {
+	font-family: 'Helvetica-light'; 
+	src: url(../public/fonts/helvetica_light.otf); 
+}
+
+
+* {
+  box-sizing: border-box;
+  color: black;
+  margin: 0;
+  padding: 0;
+  // border: 1px solid red;
+  font-family: 'Helvetica', sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+
+  &::-webkit-scrollbar {
+    width: 0.4rem;
+
+    &-thumb {
+      background-color: rgba(255, 255, 255, 0.4);
+      border-radius: 0.2rem;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.7);
+      }
+    }
+  }
+
+  // body {
+  //   background-color: black;
+  // }
+}
