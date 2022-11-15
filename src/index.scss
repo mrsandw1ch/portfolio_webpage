@@ -9,10 +9,17 @@
 }
 
 @font-face {
-	font-family: 'Helvetica-light'; 
-	src: url(../public/fonts/helvetica_light.otf); 
+	font-family: 'Golos'; 
+	src: url(../public/fonts/golos_text_regular.ttf); 
 }
 
+
+
+@media (prefers-reduced-motion: no-preference) {
+  * {
+   scroll-behavior: smooth;
+  }
+}
 
 * {
   box-sizing: border-box;
@@ -20,7 +27,7 @@
   margin: 0;
   padding: 0;
   // border: 1px solid red;
-  font-family: 'Helvetica', sans-serif;
+  font-family: 'Golos', 'Helvetica', sans-serif;
 }
 
 html {
