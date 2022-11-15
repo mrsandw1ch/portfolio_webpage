@@ -1,9 +1,10 @@
 {
   "files": {
-    "main.css": "/portfolio_webpage/static/css/main.8076c6e7.css",
-    "main.js": "/portfolio_webpage/static/js/main.627aeba1.js",
+    "main.css": "/portfolio_webpage/static/css/main.922d7a72.css",
+    "main.js": "/portfolio_webpage/static/js/main.5ded99cb.js",
     "static/js/787.f6e65957.chunk.js": "/portfolio_webpage/static/js/787.f6e65957.chunk.js",
     "static/media/technical_documentation_page.png": "/portfolio_webpage/static/media/technical_documentation_page.5102ed72f25a2d59d4a1.png",
+    "static/media/mrsandw1ch_coding.png": "/portfolio_webpage/static/media/mrsandw1ch_coding.2ee8c7913c0a155bb508.png",
     "static/media/product_landing_page.png": "/portfolio_webpage/static/media/product_landing_page.c597b0a67681e014044c.png",
     "static/media/helvetica_regular.otf": "/portfolio_webpage/static/media/helvetica_regular.da7db66db5a8e54a8308.otf",
     "static/media/photo_gallery.png": "/portfolio_webpage/static/media/photo_gallery.2a193e763bc6ecb18b54.png",
@@ -11,13 +12,14 @@
     "static/media/random_quote_machine.png": "/portfolio_webpage/static/media/random_quote_machine.bff9d403a97f368339a4.png",
     "static/media/PPEditorialNew-UltralightItalic.otf": "/portfolio_webpage/static/media/PPEditorialNew-UltralightItalic.842b8fc0816370307973.otf",
     "static/media/calculator.png": "/portfolio_webpage/static/media/calculator.835e6b909678151d9a3a.png",
+    "static/media/vydra.png": "/portfolio_webpage/static/media/vydra.1d25951e2a441891c402.png",
     "index.html": "/portfolio_webpage/index.html",
-    "main.8076c6e7.css.map": "/portfolio_webpage/static/css/main.8076c6e7.css.map",
-    "main.627aeba1.js.map": "/portfolio_webpage/static/js/main.627aeba1.js.map",
+    "main.922d7a72.css.map": "/portfolio_webpage/static/css/main.922d7a72.css.map",
+    "main.5ded99cb.js.map": "/portfolio_webpage/static/js/main.5ded99cb.js.map",
     "787.f6e65957.chunk.js.map": "/portfolio_webpage/static/js/787.f6e65957.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8076c6e7.css",
-    "static/js/main.627aeba1.js"
+    "static/css/main.922d7a72.css",
+    "static/js/main.5ded99cb.js"
   ]
 }
