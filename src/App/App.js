@@ -26,7 +26,8 @@ function App() {
     <div className="App">
       <header
         className="App-header"
-        style={{transform: (scrollDirection === 'down') ? 'translateY(-100%)' : 'translateY(0%)'}}>
+        style={{transform: (scrollDirection === 'down') ? 'translateY(-100%)' : 'translateY(0%)',
+                WebkitTransform: (scrollDirection === 'down') ? 'translateY(-100%)' : 'translateY(0%)'}}>
 
         <nav id="navbar">
           <a
@@ -214,7 +215,7 @@ function App() {
               </h3>
               <ul className='list-items'>
                 <li className='technology'>HTML</li>
-                <li className='technology'>CSS, SCSS</li>
+                <li className='technology'>CSS, SASS</li>
                 <li className='technology'>Vanilla JavaScript</li>
                 <li className='technology'>ReactJS</li>
                 <li className='technology'>Redux, React-Redux</li>
@@ -329,7 +330,7 @@ function App() {
 
               <a className='social-link' href='https://t.me/mrsandw1ch' rel="noreferrer" target='_blank'>
                 <div className='social'>
-                  <img className='social-icon' id='telegram-icon' src={require('../assets/icons/telegram.png')} alt=''/>
+                <i className="fa-brands fa-telegram social-icon"></i>
                   <span className='social-text uppercase'>
                     Telegram
                   </span>
