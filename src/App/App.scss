@@ -338,7 +338,10 @@
 
                 #social-links {
                    display: flex;
-                   gap: 1.6rem;
+                   
+                   :not(:last-of-type) {
+                    margin-right: 1.6rem;
+                   }
 
                     #telegram-icon {
                         width: 3rem;
@@ -355,7 +358,7 @@
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
-                    align-items:flex-end;
+                    align-items: flex-end;
     
                     a:hover {
                         color: #03E91E;
