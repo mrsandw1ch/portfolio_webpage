@@ -1,3 +1,15 @@
+# Portfolio webpage
+
+Uses React
+
+Uses both CSS Flexbox and Grid
+
+![screenshot-1](https://github.com/mrsandw1ch/portfolio_webpage/blob/media/readme_assets/screenshot1.png)  
+
+Sticky header disappear when page is scrolled down
+
+![screenshot-2](https://github.com/mrsandw1ch/portfolio_webpage/blob/media/readme_assets/screenshot2.png)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
