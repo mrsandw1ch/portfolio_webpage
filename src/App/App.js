@@ -3,7 +3,8 @@ import './App.scss';
 
 function App() {  
   const [lang, setLang] = useState('en')
-  const [scrollDirection, setScrollDirection] = useState('up');
+  const [scrollDirection, setScrollDirection] = useState('up')
+  const [displayNavbar, setDisplayNavbar] = useState(false)
 
   useEffect(() => {
     let lastScrollY = window.pageYOffset
@@ -13,13 +14,19 @@ function App() {
       const direction = (scrollY > lastScrollY) ? "down" : "up";
       if (direction !== scrollDirection && (scrollY - lastScrollY > 10 || scrollY - lastScrollY < -10)) {
         setScrollDirection(direction)
+        setDisplayNavbar(direction === 'down' && false)
       }
       lastScrollY = scrollY
     }
     window.addEventListener("wheel", updateScrollDirection)
+    window.addEventListener("touchmove", updateScrollDirection)
+    // window.addEventListener("scroll", updateScrollDirection)
+
     return () => {
       window.removeEventListener("wheel", updateScrollDirection)
-    }
+      window.removeEventListener("touchmove", updateScrollDirection)
+      // window.removeEventListener("scroll", updateScrollDirection)
+  }
   }, [scrollDirection]);
 
   return (
@@ -29,7 +36,7 @@ function App() {
         style={{transform: (scrollDirection === 'down') ? 'translateY(-100%)' : 'translateY(0%)',
                 WebkitTransform: (scrollDirection === 'down') ? 'translateY(-100%)' : 'translateY(0%)'}}>
 
-        <nav id="navbar">
+        <nav className={'navbar' + ((displayNavbar) ? ' display' : ' hide')}>
           <a
             className="nav-link"
             href="#top">
@@ -65,25 +72,68 @@ function App() {
               ? <>контакты</>
               : <>contact</>}
           </a>
+
+          <div id='header-social-links'>
+            <a className='social-link' href='https://t.me/mrsandw1ch' rel="noreferrer" target='_blank'>
+              <div className='social'>
+              <i className="fa-brands fa-telegram social-icon"></i>
+                <span className='social-text uppercase'>
+                  Telegram
+                </span>
+              </div>
+            </a>
+
+            <a className='social-link' href='mailto:dksviridenko@gmail.com' rel="noreferrer" target='_blank'>
+              <div className='social'>
+                <i className="fa-regular fa-at social-icon"></i>
+                <span className='social-text uppercase'>
+                  {lang === 'en'
+                    ? <>Send a mail</>
+                    : <>Написать письмо</>}
+                </span>
+              </div>
+            </a>
+          </div>
+
+          <div id='header-copyright'>
+            <p>
+              &#169; 2022 coded by <a href="https://github.com/mrsandw1ch" rel='noreferrer' target='_blank'>mrsandw1ch</a>
+              <br/>
+              designed by <a href="https://www.behance.net/DariaBorisovna" rel='noreferrer' target='_blank'>lil_soup</a>
+            </p>
+          </div>
+
         </nav>
 
-        <div id="toggle-lang">
+        <div id='toggle-buttons'>
 
-          <button
-              className='lang-btn'
-              onClick={() => {setLang('ru')}}>
-              ru
-          </button>
+          <div id="toggle-lang">
 
-          <span className='lang-slash'>&nbsp;/&nbsp;</span>
+            <button
+                className='lang-btn'
+                onClick={() => {setLang('ru')}}>
+                ru
+            </button>
 
-          <button
-              className='lang-btn'
-              onClick={() => {setLang('en')}}>
-              en
-          </button>
+            <span className='lang-slash'>&nbsp;/&nbsp;</span>
+
+            <button
+                className='lang-btn'
+                onClick={() => {setLang('en')}}>
+                en
+            </button>
+
+            </div>
+
+            <div
+              id='toggle-navbar' className={(displayNavbar) ? 'clicked' : ''}
+              onClick={() => {setDisplayNavbar(!displayNavbar)}}>
+              <div id='bar-1'></div>
+              <div id='bar-2'></div>
+            </div>
 
         </div>
+          
 
       </header>
 
@@ -92,7 +142,7 @@ function App() {
         <section id='home'>
           <h1 id="hello">
             {lang === 'ru'
-              ? <>Привет, я Дима</>
+              ? <>Привет, я <br className='line-break'/>Дима</>
               : <>Hello I'm Dmitry</>}
             <img src={require('../assets/images/vydra.png')} alt=''/>
           </h1>
@@ -111,7 +161,7 @@ function App() {
             className='section-title'>
             {lang === 'ru'
                 ? <>Проекты</>
-                : <>Some of my projects</>}
+                : <>Some <br className='line-break'/>of my projects</>}
           </h2>
 
           <div id='projects-gallery'>
@@ -137,9 +187,9 @@ function App() {
               <div className='project' id='calculator'>
                 <p className='project-name'>
                   {lang === 'ru'
-                    ? <>Формульный<br/>
+                    ? <>Формульный <br className='line-break'/>
                       калькулятор</>
-                    : <>Formula logic<br/>
+                    : <>Formula logic <br className='line-break'/>
                       calculator</>}
                   <img className='project-name-arrow' src={require('../assets/icons/arrow-black.png')} alt=''/>
                 </p>
@@ -176,7 +226,7 @@ function App() {
                 <p className='project-name'>
                   {lang === 'ru'
                     ? <>Лендинг</>
-                    : <>Product landing<br/>page</>}
+                    : <>Product landing <br className='line-break'/>page</>}
                   <img className='project-name-arrow' src={require('../assets/icons/arrow-black.png')} alt=''/>
                 </p>
                 <img className='project-image' src={require('../assets/images/product_landing_page.png')} alt='' />
@@ -201,8 +251,8 @@ function App() {
         <section id='technologies'>
           <h2 className='section-title'>
             {lang === 'ru'
-              ? <>Технологии</>
-              : <>Technologies</>}
+              ? <p>Техно<span className='transfer'>- <br/></span>логии</p>
+              : <p>Techno<span className='transfer'>- <br/></span>logies</p>}
           </h2>
 
           <div id='technologies-flexbox'>
@@ -353,8 +403,7 @@ function App() {
             <div id='copyright'>
               <p>
                 &#169; 2022 coded by <a href="https://github.com/mrsandw1ch" rel='noreferrer' target='_blank'>mrsandw1ch</a>
-              </p>
-              <p>
+                <br/>
                 designed by <a href="https://www.behance.net/DariaBorisovna" rel='noreferrer' target='_blank'>lil_soup</a>
               </p>
             </div>
