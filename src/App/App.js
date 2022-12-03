@@ -2,72 +2,73 @@ import { useEffect, useState } from 'react';
 import './App.scss';
 
 function App() {  
-  const [lang, setLang] = useState('en')
-  const [scrollDirection, setScrollDirection] = useState('up')
-  const [displayNavbar, setDisplayNavbar] = useState(false)
+  const [lang, setLang] = useState('en');
+  const [scrollDirection, setScrollDirection] = useState('up');
+  const [displayNavbar, setDisplayNavbar] = useState(false);
 
   useEffect(() => {
-    let lastScrollY = window.pageYOffset
+    let lastScrollY = window.pageYOffset;
 
     function updateScrollDirection() {
       const scrollY = window.pageYOffset;
       const direction = (scrollY > lastScrollY) ? "down" : "up";
       if (direction !== scrollDirection && (scrollY - lastScrollY > 10 || scrollY - lastScrollY < -10)) {
-        setScrollDirection(direction)
-        setDisplayNavbar(direction === 'down' && false)
+        setScrollDirection(direction);
+        setDisplayNavbar(direction === 'down' && false);
       }
-      lastScrollY = scrollY
-    }
-    window.addEventListener("wheel", updateScrollDirection)
-    window.addEventListener("touchmove", updateScrollDirection)
-    // window.addEventListener("scroll", updateScrollDirection)
+      lastScrollY = scrollY;
+    };
+    window.addEventListener("wheel", updateScrollDirection);
+    window.addEventListener("touchmove", updateScrollDirection);
 
     return () => {
-      window.removeEventListener("wheel", updateScrollDirection)
-      window.removeEventListener("touchmove", updateScrollDirection)
-      // window.removeEventListener("scroll", updateScrollDirection)
-  }
+      window.removeEventListener("wheel", updateScrollDirection);
+      window.addEventListener("touchmove", updateScrollDirection);
+  };
   }, [scrollDirection]);
 
   return (
     <div className="App">
       <header
-        className="App-header"
-        style={{transform: (scrollDirection === 'down') ? 'translateY(-100%)' : 'translateY(0%)',
-                WebkitTransform: (scrollDirection === 'down') ? 'translateY(-100%)' : 'translateY(0%)'}}>
+        className={"App-header" + ((scrollDirection === 'up') ? ' display' : ' hide')}>
 
         <nav className={'navbar' + ((displayNavbar) ? ' display' : ' hide')}>
           <a
             className="nav-link"
-            href="#top">
+            href="#home"
+            onClick={() => {setDisplayNavbar(false)}}>
             {lang === 'ru'
               ? <>в начало</>
               : <>hello</>}
           </a>
           <a
             className="nav-link"
-            href="#projects">
+            href="#projects"
+            onClick={() => {setDisplayNavbar(false)}}>
             {lang === 'ru'
               ? <>портфолио</>
               : <>projects</>}
             </a>
           <a
             className="nav-link"
-            href="#technologies">
+            href="#technologies"
+            onClick={() => {setDisplayNavbar(false)}}>
             {lang === 'ru'
               ? <>технологии</>
               : <>technologies</>}
           </a>
           <a
             className="nav-link"
-            href="#about-me">
+            href="#about-me"
+            onClick={() => {setDisplayNavbar(false)}}>
             {lang === 'ru'
               ? <>обо мне</>
               : <>about</>}
           </a>
           <a
             className="nav-link"
-            href="#contact">
+            href="#contact"
+            onClick={() => {setDisplayNavbar(false)}}>
             {lang === 'ru'
               ? <>контакты</>
               : <>contact</>}
@@ -111,6 +112,7 @@ function App() {
 
             <button
                 className='lang-btn'
+                style={{textDecoration: lang === 'ru' ? 'underline' : 'none'}}
                 onClick={() => {setLang('ru')}}>
                 ru
             </button>
@@ -119,6 +121,7 @@ function App() {
 
             <button
                 className='lang-btn'
+                style={{textDecoration: lang === 'en' ? 'underline' : 'none'}}
                 onClick={() => {setLang('en')}}>
                 en
             </button>
@@ -142,14 +145,22 @@ function App() {
         <section id='home'>
           <h1 id="hello">
             {lang === 'ru'
-              ? <>Привет, я <br className='line-break'/>Дима</>
-              : <>Hello I'm Dmitry</>}
-            <img src={require('../assets/images/vydra.png')} alt=''/>
+              ? <>
+                  Привет, 
+                  <br className='line-break'/>
+                  я Дима&nbsp;
+                  <img className='otter-mobile' src={require('../assets/images/otter.png')} alt=''/>
+                </>
+              : <>
+                  Hello <img className='otter-mobile' src={require('../assets/images/otter.png')} alt=''/>
+                  <br className='line-break'/>
+                  I'm Dmitry</>}
+            <img id='otter-desktop' src={require('../assets/images/otter.png')} alt=''/>
           </h1>
           <p id="description">
             {lang === 'ru'
-              ? <>Начинающий web разработчик. Специализируюсь на создании React-приложений. Ниже - примеры моих работ.<br/></>
-              : <>A beginner web developer. Specializing in building React applications. Feel free to take a look at my latest projects.<br/></>}
+              ? <>Web разработчик. Специализируюсь на создании React-приложений. Ниже - примеры моих работ.<br/></>
+              : <>A web developer. Specializing in building React applications. Feel free to take a look at my latest projects.<br/></>}
             <a id="email" href="mailto:dksviridenko@gmail.com">
               dksviridenko@gmail.com
             </a>
@@ -160,8 +171,8 @@ function App() {
           <h2
             className='section-title'>
             {lang === 'ru'
-                ? <>Проекты</>
-                : <>Some <br className='line-break'/>of my projects</>}
+                ? <>Мои проекты</>
+                : <>Some of <br className='line-break'/>my projects</>}
           </h2>
 
           <div id='projects-gallery'>
@@ -170,7 +181,7 @@ function App() {
               <div className='project' id='photo-gallery'>
                 <p className='project-name'>
                   {lang === 'ru'
-                    ? <>Галерея крабов</>
+                    ? <>Фотогалерея</>
                     : <>Crab photo gallery</>}
                   <img className='project-name-arrow' src={require('../assets/icons/arrow-white.png')} alt=''/>
                 </p>
@@ -230,6 +241,18 @@ function App() {
                   <img className='project-name-arrow' src={require('../assets/icons/arrow-black.png')} alt=''/>
                 </p>
                 <img className='project-image' src={require('../assets/images/product_landing_page.png')} alt='' />
+              </div>
+            </a>
+
+            <a className='project-link' id='landing-page-link' rel="noreferrer" href='https://mrsandw1ch.github.io/landing_page' target='_blank'>
+              <div className='project' id='landing-page'>
+                <p className='project-name'>
+                  {lang === 'ru'
+                    ? <>Лендинг</>
+                    : <>Landing page</>}
+                  <img className='project-name-arrow' src={require('../assets/icons/arrow-white.png')} alt=''/>
+                </p>
+                <img className='project-image' src={require('../assets/images/landing_page.png')} alt='' />
               </div>
             </a>
           </div>
@@ -342,27 +365,22 @@ function App() {
             <img id='about-me-container-image' src={require('../assets/images/mrsandw1ch_coding.png')} alt='me coding'/>
             <div id='about-me-container-text'>
               {lang === 'ru'
-                ? <><p>
-                  Мне нравится создавать сайты с нуля. Для меня важно видеть свои проекты полностью работающими. Моя цель - освоить полный цикл разработки и создавать безопасные высокопроизводительные адаптивные кроссбраузерные приложения.</p>
+                ? <p>
+                  Мне нравится создавать сайты с нуля. Для меня важно видеть свои проекты полностью работающими.<br/>
+                  Моя цель - освоить полный цикл разработки на стеке MERN и создавать безопасные высокопроизводительные адаптивные кроссбраузерные приложения.<br/>
                   <br/>
-                  <p>Обычно я использую React<br/>
-                  Есть опыт работы с jQuery, Bootstrap<br/>
-                  Знаком с AJAX<br/>
-                  При создании своих проектов работал с Figma<br/>
-                  Часто пользуюсь терминалом, знаю Git на базовом уровне<br/>
-                  Владею английским языком на уровне B2 (Intermediate)
-                </p></>
+                  Также знаком с jQuery, Bootstrap, знаю, что такое AJAX, есть опыт работы с Figma.
+                  Владею английским на уровне B2 (Intermediate), грамотно пишу и говорю на русском языке.
+                  </p>
 
-                : <><p>
-                  I like creating websites from scratch. I enjoy seeing my projects live on the internet. My goal is to become a fullstack developer and build responsive cross-browser applications that provide safe and perfomant experiences.</p>
+                : <p>
+                  I like creating websites from scratch. I enjoy seeing my projects live on the internet.<br/>
+                  My goal is to become a fullstack developer and build responsive cross-browser applications that provide safe and perfomant experiences.<br/>
                   <br/>
-                  <p>Beginner React skills<br/>
-                  Familiarity with jQuery, Bootstrap<br/>
-                  Minimal understanding of AJAX<br/>
-                  Some experience with Figma<br/>
-                  Basic knowledge of Git<br/>
-                  Intermediate English communication skills
-                </p></>}
+                  Familiarity with jQuery, Bootstrap, basic knowledge of AJAX, some experience with Figma.
+                  Intermediate English communication skills.
+                  </p>
+              }
             </div>
           </div>
          
@@ -393,7 +411,7 @@ function App() {
                   <span className='social-text uppercase'>
                     {lang === 'en'
                       ? <>Send a mail</>
-                      : <>Написать письмо</>}
+                      : <>Email</>}
                   </span>
                 </div>
               </a>
