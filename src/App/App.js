@@ -382,7 +382,7 @@ function App() {
               : <>About me</>}
           </h2>
           <div id='about-me-container'>
-            <img id='about-me-container-image' src={require('../assets/images/photo_2022-10-28_16-46-23.jpg')} alt='me coding'/>
+            <img id='about-me-container-image' src={require('../assets/images/photo_2022-10-28_16-46-23.jpg')} alt='About me'/>
             <div id='about-me-container-text'>
               {lang === 'ru'
                 ? <p>
@@ -392,11 +392,9 @@ function App() {
                   </p>
 
                 : <p>
-                  I like creating websites from scratch. I enjoy seeing my projects live on the internet.<br/>
-                  My goal is to become a fullstack developer and build responsive cross-browser applications that provide safe and perfomant experiences.<br/>
-                  <br/>
-                  Familiarity with jQuery, Bootstrap, basic knowledge of AJAX, some experience with Figma.
-                  Intermediate English communication skills.
+                  I develop web-applications since autumn 2022. I'm mostly interested in backend development, but I do frontend as well: React functional components, HTML / CSS, Sass, familiar with Figma.
+                  <br/><br/>
+                  I can create a simple server using Node.js and Express library. I understand principles of building a RESTful API. I know basic commands of PostgreSQL and I have some experience with MongoDB.
                   </p>
               }
             </div>
