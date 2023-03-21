@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.scss';
 
 function App() {  
-  const [lang, setLang] = useState('en');
+  const [lang, setLang] = useState('ru');
   const [scrollDirection, setScrollDirection] = useState('up');
   const [displayNavbar, setDisplayNavbar] = useState(false);
 
@@ -46,7 +46,7 @@ function App() {
             href="#projects"
             onClick={() => {setDisplayNavbar(false)}}>
             {lang === 'ru'
-              ? <>портфолио</>
+              ? <>проекты</>
               : <>projects</>}
             </a>
           <a
@@ -112,16 +112,15 @@ function App() {
 
             <button
                 className='lang-btn'
-                style={{textDecoration: lang === 'ru' ? 'underline' : 'none'}}
+                style={{border: lang === 'ru' ? '2px solid #03E91E' : 'none'}}
                 onClick={() => {setLang('ru')}}>
                 ru
             </button>
 
-            <span className='lang-slash'>&nbsp;/&nbsp;</span>
 
             <button
                 className='lang-btn'
-                style={{textDecoration: lang === 'en' ? 'underline' : 'none'}}
+                style={{border: lang === 'en' ? '2px solid #03E91E' : 'none'}}
                 onClick={() => {setLang('en')}}>
                 en
             </button>
@@ -146,21 +145,21 @@ function App() {
           <h1 id="hello">
             {lang === 'ru'
               ? <>
-                  Привет, 
-                  <br className='line-break'/>
-                  я Дима&nbsp;
-                  <img className='otter-mobile' src={require('../assets/images/otter.png')} alt=''/>
+                  Привет!<img className='otter-mobile' src={require('../assets/images/otter.png')} alt=''/>
                 </>
               : <>
-                  Hello <img className='otter-mobile' src={require('../assets/images/otter.png')} alt=''/>
-                  <br className='line-break'/>
-                  I'm Dmitry</>}
+                  Hello!<img className='otter-mobile' src={require('../assets/images/otter.png')} alt=''/>
+                  <br className='line-break'/></>}
             <img id='otter-desktop' src={require('../assets/images/otter.png')} alt=''/>
           </h1>
           <p id="description">
             {lang === 'ru'
-              ? <>Web разработчик. Специализируюсь на создании React-приложений. Ниже - примеры моих работ.<br/></>
-              : <>A web developer. Specializing in building React applications. Feel free to take a look at my latest projects.<br/></>}
+              ? <>Меня зовут Дмитрий<br/>
+                  Я занимаюсь разработкой web-приложений<br/>
+                  Ниже вы найдете примеры моих работ<br/></>
+              : <>My name is Dmitry<br/>
+                  I develop web applications<br/>
+                  Feel free to take a look at my latest projects<br/></>}
             <a id="email" href="mailto:dksviridenko@gmail.com">
               dksviridenko@gmail.com
             </a>
@@ -171,7 +170,7 @@ function App() {
           <h2
             className='section-title'>
             {lang === 'ru'
-                ? <>Мои проекты</>
+                ? <>Проекты</>
                 : <>Some of <br className='line-break'/>my projects</>}
           </h2>
 
@@ -181,8 +180,8 @@ function App() {
               <div className='project' id='photo-gallery'>
                 <p className='project-name'>
                   {lang === 'ru'
-                    ? <>Фотогалерея</>
-                    : <>Crab photo gallery</>}
+                    ? <>Образовательная галерея</>
+                    : <>Educational gallery</>}
                   <img className='project-name-arrow' src={require('../assets/icons/arrow-white.png')} alt=''/>
                 </p>
                 <p id='photo-gallery-text'>
@@ -274,24 +273,45 @@ function App() {
         <section id='technologies'>
           <h2 className='section-title'>
             {lang === 'ru'
-              ? <p>Техно<span className='transfer'>- <br/></span>логии</p>
-              : <p>Techno<span className='transfer'>- <br/></span>logies</p>}
+              ? <p>Техно<span className='transfer'>- </span>логии</p>
+              : <p>Techno<span className='transfer'>- </span>logies</p>}
           </h2>
 
           <div id='technologies-flexbox'>
 
             <div className='technologies-list' id='web-development'>
               <h3 className='list-title uppercase'>
-                {lang === 'ru'
-                  ? <>Web разработка</>
-                  : <>Web Development</>}
+                Client-side
               </h3>
               <ul className='list-items'>
                 <li className='technology'>HTML</li>
-                <li className='technology'>CSS, SASS</li>
+                <li className='technology'>CSS, Sass</li>
                 <li className='technology'>Vanilla JavaScript</li>
                 <li className='technology'>ReactJS</li>
                 <li className='technology'>Redux, React-Redux</li>
+                <li className='technology'>Vue.js</li>
+              </ul>
+            </div>
+
+            <div className='technologies-list' id='web-development'>
+              <h3 className='list-title uppercase'>
+                Server-side
+              </h3>
+              <ul className='list-items'>
+                <li className='technology'>Node.js</li>
+                <li className='technology'>Express</li>
+              </ul>
+            </div>
+
+            <div className='technologies-list' id='web-development'>
+              <h3 className='list-title uppercase'>
+              {lang === 'ru'
+                  ? <>СУБД</>
+                  : <>DBMS</>}
+              </h3>
+              <ul className='list-items'>
+                <li className='technology'>PostgreSQL</li>
+                <li className='technology'>MongoDB</li>
               </ul>
             </div>
 
@@ -362,15 +382,13 @@ function App() {
               : <>About me</>}
           </h2>
           <div id='about-me-container'>
-            <img id='about-me-container-image' src={require('../assets/images/mrsandw1ch_coding.png')} alt='me coding'/>
+            <img id='about-me-container-image' src={require('../assets/images/photo_2022-10-28_16-46-23.jpg')} alt='me coding'/>
             <div id='about-me-container-text'>
               {lang === 'ru'
                 ? <p>
-                  Мне нравится создавать сайты с нуля. Для меня важно видеть свои проекты полностью работающими.<br/>
-                  Моя цель - освоить полный цикл разработки на стеке MERN и создавать безопасные высокопроизводительные адаптивные кроссбраузерные приложения.<br/>
-                  <br/>
-                  Также знаком с jQuery, Bootstrap, знаю, что такое AJAX, есть опыт работы с Figma.
-                  Владею английским на уровне B2 (Intermediate), грамотно пишу и говорю на русском языке.
+                  Я создаю web-приложения с осени 2022 года. В первую очередь меня интересует разработка backend-а, хотя я делаю и клиентскую часть: создаю интерфейсы на функциональных компонентах React, верстаю по макетам из Figma.
+                  <br/><br/>
+                  Я знаю, как создать несложный сервер при помощи Node.js и библиотеки Express. Понимаю основные принципы построения RESTful API. Знаю базовый синтаксис PostgreSQL, есть опыт работы с MongoDB.
                   </p>
 
                 : <p>
