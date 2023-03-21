@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio_webpage/static/css/main.bed9ae5f.css",
-    "main.js": "/portfolio_webpage/static/js/main.cf1c4daf.js",
+    "main.css": "/portfolio_webpage/static/css/main.ec6f60f9.css",
+    "main.js": "/portfolio_webpage/static/js/main.061e7ae3.js",
     "static/js/787.f6e65957.chunk.js": "/portfolio_webpage/static/js/787.f6e65957.chunk.js",
     "static/media/landing_page.png": "/portfolio_webpage/static/media/landing_page.d1fa7489caa15e988635.png",
     "static/media/technical_documentation_page.png": "/portfolio_webpage/static/media/technical_documentation_page.751b5670eeb658d60a4e.png",
@@ -15,12 +15,12 @@
     "static/media/calculator.png": "/portfolio_webpage/static/media/calculator.835e6b909678151d9a3a.png",
     "static/media/otter.png": "/portfolio_webpage/static/media/otter.a541175fe66396373906.png",
     "index.html": "/portfolio_webpage/index.html",
-    "main.bed9ae5f.css.map": "/portfolio_webpage/static/css/main.bed9ae5f.css.map",
-    "main.cf1c4daf.js.map": "/portfolio_webpage/static/js/main.cf1c4daf.js.map",
+    "main.ec6f60f9.css.map": "/portfolio_webpage/static/css/main.ec6f60f9.css.map",
+    "main.061e7ae3.js.map": "/portfolio_webpage/static/js/main.061e7ae3.js.map",
     "787.f6e65957.chunk.js.map": "/portfolio_webpage/static/js/787.f6e65957.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bed9ae5f.css",
-    "static/js/main.cf1c4daf.js"
+    "static/css/main.ec6f60f9.css",
+    "static/js/main.061e7ae3.js"
   ]
 }
